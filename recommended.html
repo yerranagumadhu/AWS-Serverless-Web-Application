@@ -1,0 +1,72 @@
+
+<html>
+    <head>
+        <title>My Flask Application</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" crossorigin="anonymous"></script>
+
+        <script>
+            $(function(){
+                $("#header").load("https://happi2learn.s3.us-east-2.amazonaws.com/layout.html");               
+            });
+        </script>
+    </head>
+    <body>
+        <div id="header">
+        
+        </div>
+        <div class="container body-content" id="main-body">
+            <script type="text/javascript" src="https://happi2learn.s3.us-east-2.amazonaws.com/movie_post.js" crossorigin="anonymous"></script>
+            <script type="text/javascript" src="https://happi2learn.s3.us-east-2.amazonaws.com/movie_get.js"  crossorigin="anonymous"></script>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+            
+                        <h1>Movie Recomendation System</h1>
+                        <hr>
+            
+                        
+            
+                        <div class="Movie_Input">
+                            <label>Please Input Your Movie</label>
+                            <input type="text" class="form-control" id="moviename" name="movie">
+                        </div>
+        
+                        <button id="btn" class="btn btn-primary" >Give Suggestion</button>
+        
+                        <script src="https://happi2learn.s3.us-east-2.amazonaws.com/jquery-1.10.2.js" crossorigin="anonymous"></script>
+                        <script src="https://happi2learn.s3.us-east-2.amazonaws.com/bootstrap.js" crossorigin="anonymous"></script>
+                        <script src="https://happi2learn.s3.us-east-2.amazonaws.com/respond.js" crossorigin="anonymous"></script>
+                      
+                        <script src="https://happi2learn.s3.us-east-2.amazonaws.com/jquery-1.12.4.js" crossorigin="anonymous"></script>
+                        <script src="https://happi2learn.s3.us-east-2.amazonaws.com/jquery-ui.js" crossorigin="anonymous"></script>
+                        <link rel="stylesheet" type="text/css" href="https://happi2learn.s3.us-east-2.amazonaws.com/jquery-ui.css"/>
+                    
+                        <script type="text/javascript" src="https://happi2learn.s3.us-east-2.amazonaws.com/movie_autocomplete.js" crossorigin="anonymous"> </script>
+                        
+                        
+
+
+            
+                    </div>
+                </div>
+            </div>
+            
+            
+            <br>
+            <br>
+            
+            <!-- Added  due to ouput results are not good from userpoint of view on 05/07/2020-->
+            
+            
+            <div id="output"> </div>
+      
+            <hr/>
+            <footer>
+                <p>&copy; 2020 -  My Serverless Web Application</p>
+            </footer>
+        </div>
+    </body>
+</html>
+
+

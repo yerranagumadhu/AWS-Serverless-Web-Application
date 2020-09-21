@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>My Flask Application</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://happi2learn.s3.us-east-2.amazonaws.com/jquery-1.10.2.js" crossorigin="anonymous"></script>
+        <script src="https://happi2learn.s3.us-east-2.amazonaws.com/bootstrap.js" crossorigin="anonymous"></script>
+        <script src="https://happi2learn.s3.us-east-2.amazonaws.com/respond.js" crossorigin="anonymous"></script>
+        <script>
+            $(function(){
+                $("#header").load("https://happi2learn.s3.us-east-2.amazonaws.com/layout.html");               
+            });
+        </script>
+    </head>
+    <body>
+        <div id="header">
+        
+        </div>
+        <div class="container body-content" id="main-body">
+            
+            <div class="jumbotron">
+                <h1>Serverless Web Application</h1>
+                <p class="lead">Used the AWS Services <b>S3</b>, AWS <b>API Gateway</b> and AWS <b>Lambda</b>. Used the S3 To host the HTML,CSS and JavaScript and Used the AWS Lambda to  Write the Logic for ML Models and Connected both Front end and Back end using the AWS API Gateway </p>
+                <p><a href="https://aws.amazon.com/serverless/build-a-web-app/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Movie Recommendation System</h2>
+                    <p>
+                        Designed the Machine Learning Model to Match the Top 5 Movies  based on the  Given user input and later build the Flask web-application  and Front-End UI to take the user input
+                        and give the Best Matched top 5 Movies based on the Cosine similarity matrix which was build using the Moive Rating Data set from Online.
+                    </p>
+                    <a href="https://happi2learn.s3.us-east-2.amazonaws.com/recommended.html" class="btn btn-primary btn-large">Recommend a Movie &raquo;</a>
+                </div>
+                <div class="col-md-6">
+                    <h2>Wine Quality Test</h2>
+                    <p>
+                        Build the Wine Quality  ML Model using the Gradient Boosting Classifier  to Classify the Wine Quality based on the Different Paramaters like, pH, Color, Acidity, sulphates ,...
+                        and saved the Model. Later used the saved model in the Flask app  to predict and categorize Wine quality based on the user input into   3 differnt Categories Bad-Quality, Good-Quality and Best-Quality.
+                    </p>
+                    <a href="https://happi2learn.s3.us-east-2.amazonaws.com/test.html" class="btn btn-primary btn-large">Wine Quality Test &raquo;</a>
+                </div>
+            
+            </div>        
+            <hr/>
+            <footer>
+                <p>&copy; 2020 - My Serverless Web Application</p>
+            </footer>
+        </div>
+    </body>
+</html>

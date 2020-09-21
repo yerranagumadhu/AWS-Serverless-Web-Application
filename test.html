@@ -1,0 +1,330 @@
+<html>
+    <head>
+        <title>My Flask Application</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" crossorigin="anonymous"></script>
+
+        <script src="https://happi2learn.s3.us-east-2.amazonaws.com/jquery-1.10.2.js" crossorigin="anonymous"></script>
+        <script src="https://happi2learn.s3.us-east-2.amazonaws.com/bootstrap.js" crossorigin="anonymous"></script>
+        <script src="https://happi2learn.s3.us-east-2.amazonaws.com/respond.js" crossorigin="anonymous"></script>
+
+        <script>
+            $(function(){
+                $("#header").load("https://happi2learn.s3.us-east-2.amazonaws.com/layout.html");               
+            });
+        </script>
+    </head>
+    <body>
+        <div id="header">
+        
+        </div>
+        <div class="container body-content" id="main-body">
+            <br>
+            <br>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+                        $.ajax({                     
+                            type: "GET",                     
+                            url: 'https://1xr5rdz884.execute-api.us-east-2.amazonaws.com/Test',
+                            contentType: 'application/json',
+                            crossDomain: "true",  
+                            dataType: 'json',
+                            success: function (result) {
+                                console.log(result);
+                                m = JSON.parse(result['body']);
+                                $.each(m, function (key, v) {
+                                    $("#sliders").append(
+                                        "<label>" + key + ":  <span id=" + key + "_t ></span>  </label> <br> <input type='range' min=" + v[0] + " max=" + v[1] + " value=" + v[2] + " class='slider' id=" + key + "  onchange='" + key + "_f(this.value)';> <br> <br> "
+                                    );
+
+                                });
+
+                            }
+                    });
+                });
+                
+
+
+
+                //for Alchol paramter
+                function alcohol_f(val) {
+
+                    document.getElementById('alcohol_t').innerHTML = val;
+                    document.getElementById('alcohol_i').innerHTML = document.getElementById('alcohol').value;
+                }
+
+                //for type paramter
+                function type_f(val) {
+
+                    document.getElementById('type_t').innerHTML = val;
+                    document.getElementById('type_i').innerHTML = document.getElementById('type').value;
+                }
+
+                //for fixed_acidity paramter
+                function fixed_acidity_f(val) {
+
+                    document.getElementById('fixed_acidity_t').innerHTML = val;
+                    document.getElementById('fixed_acidity_i').innerHTML = document.getElementById('fixed_acidity').value;
+                }
+
+                //for volatile_acidity paramter
+                function volatile_acidity_f(val) {
+
+                    document.getElementById('volatile_acidity_t').innerHTML = val;
+                    document.getElementById('volatile_acidity_i').innerHTML = document.getElementById('volatile_acidity').value;
+                }
+
+                //for citric_acid paramter
+                function citric_acid_f(val) {
+
+                    document.getElementById('citric_acid_t').innerHTML = val;
+                    document.getElementById('citric_acid_i').innerHTML = document.getElementById('citric_acid').value;
+                }
+
+                //for residual_sugar paramter
+                function residual_sugar_f(val) {
+
+                    document.getElementById('residual_sugar_t').innerHTML = val;
+                    document.getElementById('residual_sugar_i').innerHTML = document.getElementById('residual_sugar').value;
+                }
+
+                //for chlorides paramter
+                function chlorides_f(val) {
+
+                    document.getElementById('chlorides_t').innerHTML = val;
+                    document.getElementById('chlorides_i').innerHTML = document.getElementById('chlorides').value;
+
+                }
+
+                //for free_sulfur_dioxide paramter
+                function free_sulfur_dioxide_f(val) {
+
+                    document.getElementById('free_sulfur_dioxide_t').innerHTML = val;
+                    document.getElementById('free_sulfur_dioxide_i').innerHTML = document.getElementById('free_sulfur_dioxide').value;
+                }
+
+                //for total_sulfur_dioxide paramter
+                function total_sulfur_dioxide_f(val) {
+
+                    document.getElementById('total_sulfur_dioxide_t').innerHTML = val;
+                    document.getElementById('total_sulfur_dioxide_i').innerHTML = document.getElementById('total_sulfur_dioxide').value;
+                }
+
+                //for density paramter
+                function density_f(val) {
+
+                    document.getElementById('density_t').innerHTML = val;
+                    document.getElementById('density_i').innerHTML = document.getElementById('density').value;
+
+                }
+
+                //for pH paramter
+                function pH_f(val) {
+
+                    document.getElementById('pH_t').innerHTML = val;
+                    document.getElementById('pH_i').innerHTML = document.getElementById('pH').value;
+                }
+
+                //for sulphates paramter
+                function sulphates_f(val) {
+
+                    document.getElementById('sulphates_t').innerHTML = val;
+                    document.getElementById('sulphates_i').innerHTML = document.getElementById('sulphates').value;
+                }
+
+
+
+
+                // Function To change the step size
+                function chnge_step_size() {
+
+                    document.getElementById('alcohol').setAttribute("step", "0.10");
+                    document.getElementById('fixed_acidity').setAttribute("step", "0.10");
+                    document.getElementById('volatile_acidity').setAttribute("step", "0.01");
+                    document.getElementById('citric_acid').setAttribute("step", "0.05");
+                    document.getElementById('residual_sugar').setAttribute("step", "0.10");
+                    document.getElementById('chlorides').setAttribute("step", "0.01");
+                    document.getElementById('free_sulfur_dioxide').setAttribute("step", "5");
+                    document.getElementById('total_sulfur_dioxide').setAttribute("step", "5");
+                    document.getElementById('density').setAttribute("step", "0.01");
+                    document.getElementById('pH').setAttribute("step", "0.01");
+                    document.getElementById('sulphates').setAttribute("step", "0.01");
+
+
+                    // Now set the Mean value as default
+                    document.getElementById('type_t').innerHTML = 0;
+                    document.getElementById('fixed_acidity_t').innerHTML = document.getElementById('fixed_acidity').getAttribute('value');
+                    document.getElementById('volatile_acidity_t').innerHTML = document.getElementById('volatile_acidity').getAttribute('value');
+                    document.getElementById('citric_acid_t').innerHTML = document.getElementById('citric_acid').getAttribute('value');
+                    document.getElementById('residual_sugar_t').innerHTML = document.getElementById('residual_sugar').getAttribute('value');
+                    document.getElementById('chlorides_t').innerHTML = document.getElementById('chlorides').getAttribute('value');
+                    document.getElementById('free_sulfur_dioxide_t').innerHTML = document.getElementById('free_sulfur_dioxide').getAttribute('value');
+                    document.getElementById('total_sulfur_dioxide_t').innerHTML = document.getElementById('total_sulfur_dioxide').getAttribute('value');
+                    document.getElementById('density_t').innerHTML = document.getElementById('density').getAttribute('value');
+                    document.getElementById('pH_t').innerHTML = document.getElementById('pH').getAttribute('value');
+                    document.getElementById('sulphates_t').innerHTML = document.getElementById('sulphates').getAttribute('value');
+                    document.getElementById('alcohol_t').innerHTML = document.getElementById('alcohol').getAttribute('value');
+
+
+                }
+
+
+                // The below line is used to excute the function when the page got loaded 
+                window.onload = function () {
+                    setTimeout(chnge_step_size, 1000);
+                    setTimeout(get_the_input, 1500);
+                }
+
+                // Function To change the step size
+                function get_the_input() {
+
+                    //Now setting the list on the Right side from the user input
+
+                    document.getElementById('type_i').innerHTML = document.getElementById('type').value;
+                    document.getElementById('fixed_acidity_i').innerHTML = document.getElementById('fixed_acidity').value;
+                    document.getElementById('volatile_acidity_i').innerHTML = document.getElementById('volatile_acidity').value;
+                    document.getElementById('citric_acid_i').innerHTML = document.getElementById('citric_acid').value;
+                    document.getElementById('residual_sugar_i').innerHTML = document.getElementById('residual_sugar').value;
+                    document.getElementById('chlorides_i').innerHTML = document.getElementById('chlorides').value;
+                    document.getElementById('free_sulfur_dioxide_i').innerHTML = document.getElementById('free_sulfur_dioxide').value;
+                    document.getElementById('total_sulfur_dioxide_i').innerHTML = document.getElementById('total_sulfur_dioxide').value;
+                    document.getElementById('density_i').innerHTML = document.getElementById('density').value;
+                    document.getElementById('pH_i').innerHTML = document.getElementById('pH').value;
+                    document.getElementById('sulphates_i').innerHTML = document.getElementById('sulphates').value;
+                    document.getElementById('alcohol_i').innerHTML = document.getElementById('alcohol').value;
+
+
+                }
+
+
+
+                $('input[type=range]').on('input', function () {
+                    get_the_input();
+                });
+
+                
+                    $(document).ready(function () {
+                        $('form').on('submit', function (event) {
+                            $.ajax({
+                                type: 'POST',
+                                url: 'https://1xr5rdz884.execute-api.us-east-2.amazonaws.com/Test',
+                                contentType: 'application/json',
+                                crossDomain: "true", 
+                                data: JSON.stringify({
+                                    "body" : 
+                                        {   
+                                            "type":$('#type').val(),
+                                            "fixed_acidity":$('#fixed_acidity').val(),
+                                            "volatile_acidity":$('#volatile_acidity').val(),
+                                            "citric_acid":$('#citric_acid').val(),
+                                            "residual_sugar":$('#residual_sugar').val(),
+                                            "chlorides":$('#chlorides').val(),
+                                            "free_sulfur_dioxide":$('#free_sulfur_dioxide').val(),
+                                            "total_sulfur_dioxide":$('#total_sulfur_dioxide').val(),
+                                            "density":$('#density').val(),
+                                            "pH":$('#pH').val(),
+                                            "sulphates":$('#sulphates').val(),
+                                            "alcohol":$('#alcohol').val()                                        
+                                        },
+                                    "context" : 
+                                        {
+                                            "http-method" : "POST",
+                                            "resource-path" : "/"
+                                        }
+
+                                })
+                                
+                            }).done(function (data)
+                            {
+                                console.log(data);
+                                m = JSON.parse(data['body']);
+                                console.log(m);
+                                $('#output').empty().append("<h3 class='post-title'>" + m['predicted_quality'] + "</h3>");
+                                $('#img').empty().prepend("<img src='https://happi2learn.s3.us-east-2.amazonaws.com/static/images/" + m['image'] + " '/>");
+                            
+                            });
+                            event.preventDefault();
+                        });
+                    });
+
+            </script>
+
+
+
+
+            <form class="form-inline">
+                <div class="wine_box">
+                    <div class="wine_row">
+                        <div class="wine_column left_wine" style="background-color:#aaa;">
+                            <h3 class="post-title">Set the Sliders to check the Quality of Wine</h3>
+                            <br>
+                            <div class="slidecontainer" , id="sliders">
+                                <!--The Slider Input will go here -->
+                            </div>
+
+
+                        </div>
+                        <div class="wine_column right_wine" style="background-color:#bbb;">
+                            <div class="container-fluid post-container">
+                                <div class='row'>
+                                    <div class="col-lg-6 col-md-6">
+                                        <img src="https://happi2learn.s3.us-east-2.amazonaws.com/static/images/wine_logo.jpg" />
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 px-3">
+                                        <h3 class="post-title">For the Input</h3>
+                                        <ol>
+                                            <li>type: <span id="type_i"></span> </li>
+                                            <li>fixed_acidity: <span id="fixed_acidity_i"></span> </li>
+                                            <li>volatile_acidity: <span id="volatile_acidity_i"></span> </li>
+                                            <li>citric_acid: <span id="citric_acid_i"></span> </li>
+                                            <li>residual_sugar: <span id="residual_sugar_i"></span> </li>
+                                            <li>chlorides: <span id="chlorides_i"></span> </li>
+                                            <li>free_sulfur_dioxide: <span id="free_sulfur_dioxide_i"></span> </li>
+                                            <li>total_sulfur_dioxide: <span id="total_sulfur_dioxide_i"></span> </li>
+                                            <li>density <span id="density_i"></span> </li>
+                                            <li>pH: <span id="pH_i"></span> </li>
+                                            <li>sulphates: <span id="sulphates_i"></span> </li>
+                                            <li>alcohol: <span id="alcohol_i"></span> </li>
+
+                                        </ol>
+                                        <button type="submit" class="btn btn-default"> Get the Wine Quality </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                                    <!-- Out Result from the Flask app we go here-->
+                            <div class="container-fluid post-container">
+                                <div class='row'>
+                                    <div class="col-lg-6 col-md-6" id="img">
+
+
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 px-3">                            
+                                            <div id="output">
+                                                <!-- Append the Output here -->
+                                                <h3 class="post-title" , id="quality_cat "></h3>
+                                            </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <hr/>
+            <footer>
+                <p>&copy; 2020 -  My Serverless Web Application</p>
+            </footer>
+        </div>
+    </body>
+</html>
+    
+
+
